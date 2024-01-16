@@ -4,7 +4,7 @@ import React from "react";
 const AppButton = ({ text, bg, textColor, handlePress }) => {
   return (
     <TouchableOpacity
-      activeOpacity={"0.9"}
+      activeOpacity={0.7}
       className={`p-5 bg-${bg} w-[90%] mx-auto rounded-full`}
       onPress={handlePress}
     >

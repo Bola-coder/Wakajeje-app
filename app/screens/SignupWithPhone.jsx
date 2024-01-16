@@ -3,11 +3,14 @@ import React, { useState, useRef } from "react";
 import PhoneInput from "react-native-phone-number-input";
 import AppButton from "../components/AppButton";
 
-const SignupWithPhone = () => {
+const SignupWithPhone = ({ navigation }) => {
   const [value, setValue] = useState("");
   const [formattedValue, setFormattedValue] = useState("");
   const phoneInput = useRef(null);
   const allowedCountries = ["NG"];
+  const handleSignup = () => {
+    navigation.navigate("VerifyAccountWithOTPScreen");
+  };
   return (
     <View className={"flex-1 justify-center items-center"}>
       <Text className={"text-[24px] font-semibold mb-4"}>
@@ -34,7 +37,7 @@ const SignupWithPhone = () => {
           text={"Sign Up"}
           bg={"primary"}
           textColor={"white"}
-          //   handlePress={handleButtonPress}
+          handlePress={handleSignup}
         />
       </View>
     </View>

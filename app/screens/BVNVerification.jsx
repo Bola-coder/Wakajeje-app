@@ -17,7 +17,7 @@ const BVNVerification = ({ navigation }) => {
     setShowSuccessModal(false);
   };
 
-  const handleNINVerification = () => {
+  const handleBVNVerification = () => {
     // setShowErrorModal(true);
     setShowSuccessModal(true);
   };
@@ -57,7 +57,7 @@ const BVNVerification = ({ navigation }) => {
             text={"Verify Identity"}
             bg={"primary"}
             textColor={"white"}
-            handlePress={handleNINVerification}
+            handlePress={handleBVNVerification}
           />
         </View>
         <ErrorModal

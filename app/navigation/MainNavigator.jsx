@@ -12,6 +12,7 @@ import IDVerification from "../screens/IDVerification";
 import NINVerification from "../screens/NINVerification";
 import HomeScreen from "../screens/HomeScreen";
 import BVNVerification from "../screens/BVNVerification";
+import TabNavigation from "./TabNavigation";
 
 const Stack = createNativeStackNavigator();
 const MainNavigator = () => {
@@ -68,8 +69,8 @@ const MainNavigator = () => {
         options={{ headerShown: false }}
       />
       <Stack.Screen
-        name="HomeScreen"
-        component={HomeScreen}
+        name="Tab"
+        component={TabNavigation}
         options={{ headerShown: false }}
       />
     </Stack.Navigator>

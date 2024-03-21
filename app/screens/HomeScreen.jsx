@@ -33,8 +33,8 @@ const HomeScreen = () => {
   return (
     <ScrollView
       vertical
-      showVerticalScrollIndicator
-      className={"p-4 flex-1 bg-white"}
+      showsVerticalScrollIndicator
+      className={"p-4 pb-7 flex-1 bg-white"}
     >
       {/* Home Header */}
       <View className={"flex-row justify-between items-center"}>

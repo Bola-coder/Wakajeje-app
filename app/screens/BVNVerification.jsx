@@ -81,7 +81,7 @@ const BVNVerification = ({ navigation }) => {
           onClose={handleSuccessModalClose}
           message={"Your NIN Details has been Captured and Verified"}
           buttonText={"Continue to Home"}
-          onButtonPress={() => navigation.navigate("HomeScreen")}
+          onButtonPress={() => navigation.navigate("Tab")}
         />
       </View>
     </KeyboardAvoidingView>

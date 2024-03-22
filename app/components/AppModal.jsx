@@ -1,14 +1,19 @@
-import React from "react";
-import { View, Text, Image, TouchableOpacity, Modal } from "react-native";
+import { View, Text, Image, TouchableOpacity, Modal } from 'react-native'
+import React from 'react'
 import IonIcons from "@expo/vector-icons/Ionicons";
 import AppButton from "./AppButton";
-const SuccessModal = ({
-  isVisible,
-  onClose,
-  title,
-  message,
-  buttonText,
-  onButtonPress,
+
+const AppModal = ({
+    isVisible,
+    onClose,
+    image,
+    title,
+    message,
+    buttonText,
+    onButtonPress,
+    showSecondButton,
+    secondButtonText,
+    onSecondButtonPress
 }) => {
   return (
     <Modal
@@ -27,7 +32,7 @@ const SuccessModal = ({
             <IonIcons name="close" size={30} color="#141B34" />
           </TouchableOpacity>
           <Image
-            source={require("./../../assets/images/successImage.png")}
+            source={image}
             className={"self-center m-5"}
           />
           <Text className={"text-center text-[20px] font-bold"}>{title}</Text>
@@ -40,10 +45,19 @@ const SuccessModal = ({
             textColor={"white"}
             handlePress={onButtonPress}
           />
+            {showSecondButton && (
+                <AppButton
+                text={secondButtonText}
+                // bg={"primary"}
+                textColor={"black"}
+                handlePress={onSecondButtonPress}
+                
+                />
+            )}
         </View>
       </View>
     </Modal>
-  );
-};
+  )
+}
 
-export default SuccessModal;
+export default AppModal

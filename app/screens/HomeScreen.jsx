@@ -1,6 +1,6 @@
 import { View, Text, Image, TextInput, ScrollView, TouchableOpacity } from "react-native";
-import React, { useEffect } from "react";
-import * as Location from "expo-location";
+import React, { useState, useEffect } from "react";
+import { useAppContext } from "../context/AppContext";
 import IonIcons from "@expo/vector-icons/Ionicons";
 import FontAwesomeIcon from "@expo/vector-icons/FontAwesome";
 import SectionTitle from "../components/SectionTitle";
@@ -10,26 +10,16 @@ import smallCarImage from "./../../assets/images/smallCarImage.png";
 import packageImage from "./../../assets/images/packageImage.png";
 import resturantImage from "./../../assets/images/resturantImage.png";
 import errandImage from "./../../assets/images/errandImage.png";
+
 const HomeScreen = ({navigation}) => {
+  const {location, locationError, getLocation} = useAppContext()
+
   useEffect(() => {
-    const getLocation = async () => {
-      try {
-        let { status } = await Location.requestForegroundPermissionsAsync();
-
-        if (status !== "granted") {
-          setLocationError("Location permission denied");
-          return;
-        }
-
-        let location = await Location.getCurrentPositionAsync({});
-        // console.log(location);
-      } catch (error) {
-        console.error("Error requesting location permission:", error);
-      }
-    };
-
     getLocation();
   }, []);
+  
+  console.log(location);
+  console.log(locationError);
 
   const handleBookRideClick = () => {
     navigation.navigate("BookRide");

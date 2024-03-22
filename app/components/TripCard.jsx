@@ -3,7 +3,7 @@ import React from "react";
 import IonIcons from "@expo/vector-icons/Ionicons";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 
-const TripCard = ({ useIcon }) => {
+const TripCard = ({ Icon, useIcon, hideRightSideContent }) => {
   return (
     <TouchableOpacity
       activeOpacity={0.4}
@@ -11,7 +11,8 @@ const TripCard = ({ useIcon }) => {
     >
       <View className={"flex-row justify-between items-center"}>
         <View className={"p-4 bg-gray-200 rounded-full mr-3"}>
-          <Image source={require("./../../assets/images/foodIcon.png")} />
+          {/* <Image source={require("./../../assets/images/foodIcon.png")} /> */}
+          {Icon}
         </View>
         <View>
           <View className={"pb-1"}>
@@ -22,21 +23,21 @@ const TripCard = ({ useIcon }) => {
               <IonIcons name={"time"} size={16} />
               <Text className={"text-md font-medium ml-1"}>5 mins drive</Text>
             </View>
-            <View className={"flex-row items-center"}>
+           {!hideRightSideContent && ( <View className={"flex-row items-center"}>
               <IonIcons name={"star"} size={16} color={"#F27C28"} />
               <Text className={"text-md font-medium ml-1"}>4.3</Text>
-            </View>
+            </View>)}
           </View>
         </View>
       </View>
 
-      <View className={"mr-2"}>
+    {!hideRightSideContent && (  <View className={"mr-2"}>
         {useIcon ? (
           <FontAwesome name="angle-right" size={30} />
         ) : (
           <Text className={"text-xl font-bold"}>6,500</Text>
         )}
-      </View>
+      </View>)}
     </TouchableOpacity>
   );
 };

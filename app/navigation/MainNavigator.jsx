@@ -13,6 +13,7 @@ import NINVerification from "../screens/NINVerification";
 import HomeScreen from "../screens/HomeScreen";
 import BVNVerification from "../screens/BVNVerification";
 import TabNavigation from "./TabNavigation";
+import BookRide from "../screens/BookRide";
 
 const Stack = createNativeStackNavigator();
 const MainNavigator = () => {
@@ -69,10 +70,16 @@ const MainNavigator = () => {
         options={{ headerShown: false }}
       />
       <Stack.Screen
+        name="BookRide"
+        component={BookRide}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
         name="Tab"
         component={TabNavigation}
         options={{ headerShown: false }}
       />
+      
     </Stack.Navigator>
   );
 };

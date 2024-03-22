@@ -1,7 +1,8 @@
-import { View, Text, Image, TextInput, ScrollView } from "react-native";
+import { View, Text, Image, TextInput, ScrollView, TouchableOpacity } from "react-native";
 import React, { useEffect } from "react";
 import * as Location from "expo-location";
 import IonIcons from "@expo/vector-icons/Ionicons";
+import FontAwesomeIcon from "@expo/vector-icons/FontAwesome";
 import SectionTitle from "../components/SectionTitle";
 import TripCard from "../components/TripCard";
 import ProductCard from "../components/ProductCard";
@@ -9,7 +10,7 @@ import smallCarImage from "./../../assets/images/smallCarImage.png";
 import packageImage from "./../../assets/images/packageImage.png";
 import resturantImage from "./../../assets/images/resturantImage.png";
 import errandImage from "./../../assets/images/errandImage.png";
-const HomeScreen = () => {
+const HomeScreen = ({navigation}) => {
   useEffect(() => {
     const getLocation = async () => {
       try {
@@ -29,6 +30,10 @@ const HomeScreen = () => {
 
     getLocation();
   }, []);
+
+  const handleBookRideClick = () => {
+    navigation.navigate("BookRide");
+  }
 
   return (
     <ScrollView
@@ -73,7 +78,7 @@ const HomeScreen = () => {
       <View>
         <SectionTitle name={"Restaurants Around Me "} />
         <View>
-          <TripCard useIcon={true} />
+          <TripCard useIcon={true} Icon={<FontAwesomeIcon name='cutlery' size={24}/>}/>
           {/* <TripCard /> */}
         </View>
       </View>
@@ -87,14 +92,14 @@ const HomeScreen = () => {
         <View>
           <Text className={"text-3xl font-bold text-white"}>Ride Smart</Text>
           <Text className={"text-3xl font-bold text-white"}>Earn Big</Text>
-          <View className={"flex-row justify-between items-center mt-2"}>
+          <TouchableOpacity onPress={handleBookRideClick} className={"flex-row justify-between items-center mt-2"}>
             <Text className={"text-md font-medium text-white"}>
               Ride with Wakajeje{" "}
             </Text>
             <View className={"self-center"}>
               <IonIcons name="arrow-forward" size={18} color="#FFF" />
             </View>
-          </View>
+          </TouchableOpacity>
         </View>
         <View>
           <Image
@@ -123,13 +128,13 @@ const HomeScreen = () => {
       <View>
         <SectionTitle name={"My Trips"} />
         <View>
-          <TripCard />
-          <TripCard />
-          <TripCard />
-          <TripCard />
-          <TripCard />
-          <TripCard />
-          <TripCard />
+        <TripCard useIcon={true} Icon={<FontAwesomeIcon name='cutlery' size={24}/>}/>
+        <TripCard useIcon={true} Icon={<FontAwesomeIcon name='cutlery' size={24}/>}/>
+        <TripCard useIcon={true} Icon={<FontAwesomeIcon name='cutlery' size={24}/>}/>
+        <TripCard useIcon={true} Icon={<FontAwesomeIcon name='cutlery' size={24}/>}/>
+        <TripCard useIcon={true} Icon={<FontAwesomeIcon name='cutlery' size={24}/>}/>
+        <TripCard useIcon={true} Icon={<FontAwesomeIcon name='cutlery' size={24}/>}/>
+        <TripCard useIcon={true} Icon={<FontAwesomeIcon name='cutlery' size={24}/>}/>
         </View>
       </View>
     </ScrollView>

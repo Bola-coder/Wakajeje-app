@@ -4,8 +4,11 @@ import AppButton from "../components/AppButton";
 
 const Onboarding = ({ navigation }) => {
   const handleButtonPress = () => {
-    navigation.navigate("SignupWithPhoneScreen");
+    // navigation.navigate("SignupWithPhoneScreen");
+    navigation.navigate("Tab");
   };
+
+  
   return (
     <View>
       <View className="mt-[30%]">

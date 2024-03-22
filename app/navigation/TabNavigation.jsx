@@ -7,6 +7,8 @@ import homeTabIcon from "./../../assets/icons/homeTabIcon.png";
 import productTabIcon from "./../../assets/icons/productTabIcon.png";
 import tripTabIcon from "./../../assets/icons/tripTabIcon.png";
 import profileTabIcon from "./../../assets/icons/profileTabIcon.png";
+// import homeTabIconActive from "./../assets/icons/homeTabIconActive.png"
+
 
 const Tab = createBottomTabNavigator();
 const TabNavigation = () => {

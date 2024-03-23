@@ -14,6 +14,7 @@ import HomeScreen from "../screens/HomeScreen";
 import BVNVerification from "../screens/BVNVerification";
 import TabNavigation from "./TabNavigation";
 import BookRide from "../screens/BookRide";
+import SelectRide from "../screens/SelectRide";
 
 const Stack = createNativeStackNavigator();
 const MainNavigator = () => {
@@ -72,6 +73,11 @@ const MainNavigator = () => {
       <Stack.Screen
         name="BookRide"
         component={BookRide}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="SelectRide"
+        component={SelectRide}
         options={{ headerShown: false }}
       />
       <Stack.Screen

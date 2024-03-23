@@ -6,8 +6,9 @@ import FontAwesomeIcon from "@expo/vector-icons/FontAwesome5";
 import TripCard from "../components/TripCard";
 import AppModal from "../components/AppModal";
 import teamworkImage from "./../../assets/images/Teamwork.png"
+import { useNavigation } from "@react-navigation/native";
 
-const BookRide = () => {
+const BookRide = ({navigation}) => {
   const [showModal, setshowModal] = useState(false);
   return (
     <View className={"pb-7 flex-1 bg-white"}>
@@ -45,7 +46,7 @@ const BookRide = () => {
             Icon={<IonIcons name="location-sharp" size={24} />}
           />
         </ScrollView>
-        <AppModal isVisible={showModal} image={teamworkImage  } onClose={() => setshowModal(false)} title={"Where are you now?"} message={"Tell us where you are. Instant ride matching with nearby vehicles awaits!"} buttonText={"Set automatically"} showSecondButton={true} secondButtonText={"set later"}/>
+        <AppModal isVisible={showModal} image={teamworkImage  } onClose={() => setshowModal(false)} title={"Where are you now?"} message={"Tell us where you are. Instant ride matching with nearby vehicles awaits!"} buttonText={"Set automatically"} showSecondButton={true} secondButtonText={"set later"} onButtonPress={() => {navigation.navigate("SelectRide")}}/>
       </View>
     </View>
   );
